@@ -1,16 +1,20 @@
-import React, {Component, useState} from "react";
-import '../styles/App.css';
+import React, { Component, useState } from "react";
+import "../styles/App.css";
+let list = ["pratik", "praksh", "tamhane"];
+function App() {
+  const [data, setdata] = useState(list);
 
-class App extends Component {
-    render() {
-
-        return(
-            <div id="main">
-               {/* Do not remove the main div */}
-            </div>
-        )
-    }
+  return (
+    <div id="main">
+      {/* Do not remove the main div */}
+      <ol key={"relativeList"}>
+        {data.map((ele, index) => {
+          let no = index + 1;
+          return <li key={"relativeListItem" + no}>{ele}</li>;
+        })}
+      </ol>
+    </div>
+  );
 }
-
 
 export default App;
